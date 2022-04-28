@@ -19,11 +19,11 @@
 #else
 #define GC_PRINTOBJ_REF(i)
 #endif
-unsigned long long roundinchunks(unsigned long long num, unsigned long long chunksize) {
-    if ((num % chunksize) == 0) return num;
-    return (chunksize - (num % chunksize) + num);
-}
 namespace gc {
+    inline unsigned long long roundinchunks(unsigned long long num, unsigned long long chunksize) {
+        if ((num % chunksize) == 0) return num;
+        return (chunksize - (num % chunksize) + num);
+    }
     using namespace std;
     template <typename T>
     class Object;
